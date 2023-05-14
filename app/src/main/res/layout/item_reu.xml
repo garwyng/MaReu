@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/item_image_list_reu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_meeting_room_24" />
+
+    <TextView
+        android:id="@+id/item_list_salle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textStyle="bold"
+        android:hint="REUNION A"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image_list_reu"
+        app:layout_constraintStart_toEndOf="@+id/item_image_list_reu"
+        app:layout_constraintTop_toTopOf="@+id/item_image_list_reu" />
+    <TextView
+        android:id="@+id/item_list_heure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textStyle="bold"
+        android:hint="14H00"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image_list_reu"
+        app:layout_constraintStart_toEndOf="@+id/item_list_salle"
+        app:layout_constraintTop_toTopOf="@+id/item_image_list_reu" />
+    <TextView
+        android:id="@+id/item_list_objet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textStyle="bold"
+        android:hint="Presentation"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image_list_reu"
+        app:layout_constraintStart_toEndOf="@+id/item_list_heure"
+        app:layout_constraintTop_toTopOf="@+id/item_image_list_reu" />
+    <TextView
+        android:id="@+id/item_list_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:hint="sebastiencusset@hotmail.com"
+        android:textStyle="normal"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_image_list_reu" />
+
+    <ImageButton
+        android:id="@+id/item_list_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/item_list_salle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_list_salle"
+        app:srcCompat="@drawable/baseline_delete_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
