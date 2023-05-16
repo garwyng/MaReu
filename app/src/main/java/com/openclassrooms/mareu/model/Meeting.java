@@ -1,36 +1,29 @@
 package com.openclassrooms.mareu.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class Meeting {
 
-    public String heure;
-    public String subject;
-    public List<CoWorker> participants;
-    public SalleReu salle;
+    private String subject;
+    private List<CoWorker> participants;
+    private Room room;
+    private Date creationDate;
+    private Date reservationDate;
 
     /**
      *
-     * @param heure
      * @param subject
      * @param participants
-     * @param salle
+     * @param room
      */
-    public Meeting(String heure, String subject, List<CoWorker> participants, SalleReu salle) {
-        this.heure = heure;
+    public Meeting(String subject, List<CoWorker> participants, Room room, Date creationDate, Date reservationDate) {
         this.subject = subject;
         this.participants = participants;
-        this.salle = salle;
+        this.room = room;
+        this.creationDate = creationDate;
+        this.reservationDate = reservationDate;
     }
-
-    public String getHeure() {
-        return heure;
-    }
-
-    public void setHeure(String heure) {
-        this.heure = heure;
-    }
-
     public String getSubject() {
         return subject;
     }
@@ -47,11 +40,27 @@ public class Meeting {
         this.participants = participants;
     }
 
-    public SalleReu getSalle() {
-        return salle;
+    public Room getSalle() {
+        return room;
     }
 
-    public void setSalle(SalleReu salle) {
-        this.salle = salle;
+    public void setSalle(Room salle) {
+        this.room = salle;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Date getReservationDate() {
+        return reservationDate;
+    }
+
+    public void setReservationDate(Date reservationDate) {
+        this.reservationDate = reservationDate;
     }
 }

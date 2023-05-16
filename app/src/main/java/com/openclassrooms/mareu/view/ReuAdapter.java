@@ -26,7 +26,7 @@ public class ReuAdapter extends RecyclerView.Adapter<ReuAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_reu, parent, false);
+                .inflate(R.layout.meeting_item_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -44,26 +44,25 @@ public class ReuAdapter extends RecyclerView.Adapter<ReuAdapter.ViewHolder> {
         /**
          * declaration view's elements
          */
-        public final TextView salleReu;
-        public final TextView heureReu;
-        public final TextView objetReu;
-        public final TextView participantReu;
-        public final ImageView imageReu;
+        public final TextView meetingRoom;
+        public final TextView hourMeeting;
+        public final TextView subjectReu;
+        public final TextView meetingGuest;
+        public final ImageView imageMeeting;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            salleReu = itemView.findViewById(R.id.item_list_salle);
-            heureReu = itemView.findViewById(R.id.item_list_heure);
-            objetReu = itemView.findViewById(R.id.item_list_objet);
-            participantReu= itemView.findViewById(R.id.item_list_guest);
-            imageReu = itemView.findViewById(R.id.item_image_list_reu);
+            meetingRoom = itemView.findViewById(R.id.item_list_salle);
+            hourMeeting = itemView.findViewById(R.id.item_list_heure);
+            subjectReu = itemView.findViewById(R.id.item_list_objet);
+            meetingGuest= itemView.findViewById(R.id.item_list_guest);
+            imageMeeting = itemView.findViewById(R.id.item_image_list_reu);
         }
 
         public void displayReu(Meeting meeting) {
-            salleReu.setText(meeting.salle.getSalleName());
-            heureReu.setText(meeting.heure);
-            objetReu.setText(meeting.subject);
-            participantReu.setText(meeting.participants.toString());
+            meetingRoom.setText(meeting.getSalle().getSalleName());
+            subjectReu.setText(meeting.getSubject());
+            meetingGuest.setText(meeting.getParticipants().toString());
 
         }
     }

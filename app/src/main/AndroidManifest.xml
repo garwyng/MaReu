@@ -16,15 +16,6 @@
             android:exported="false"
             android:label="@string/title_activity_add_meeting"
             android:theme="@style/Theme.MaRéu.NoActionBar" />
-        <activity
-            android:name=".view.MaReuList"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
