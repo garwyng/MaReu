@@ -7,5 +7,9 @@
     <string name="add_new_meeting">écran création réunion</string>
     <string name="select_date" >Sélecti</string>
     <string name="select_hour" />
-    <string name="set_hour">renseigner l\'heure</string>
+    <string name="set_hour_stop">renseigner l\'heure</string>
+    <string name="Subject">objet de la réunion</string>
+    <string name="email">email</string>
+    <string name="select_room" >sele</string>
+    <string name="select_hour_start">hour meeting start</string>Sélection de la salle de réunion />
 </resources>

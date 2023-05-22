@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">MaRéu</string>
     <string name="new_meeting">Nouvelle Réunion</string>
-    <string name="title_activity_add_meeting">AddMeetingActivity</string>
+    <string name="title_activity_add_meeting">créer une réunion</string>
     <string name="send_invitation">envoyer l\'invitation</string>
     <string name="add_new_meeting">écran création réunion</string>
-    <string name="select_date">Sélection de la date</string>Sélection de la date />
+    <string name="select_date">Sélection de la date de la réunion</string>Sélection de la date />
     <string name="select_hour">Sélection de l\'heure</string>
-    <string name="set_hour">renseigner l\'heure</string>Sélection de l'heure />
+    <string name="set_hour_stop">renseigner l\'heure</string>
+    <string name="Subject">objet de la réunion</string>
+    <string name="email">email</string>
+    <string name="select_room" >selection de la salle de réunion</string>
+    <string name="select_hour_start">hour meeting start</string>Sélection de la salle de réunion />
 </resources>
