@@ -4,12 +4,14 @@ import static com.openclassrooms.mareu.R.layout.meeting_item_row;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.openclassrooms.mareu.R;
+import com.openclassrooms.mareu.controler.MyMeetingApiService;
 import com.openclassrooms.mareu.model.Meeting;
 
 import java.util.List;
@@ -43,10 +45,22 @@ public class MyMeetingAdapter extends RecyclerView.Adapter<MyMeetingViewHolder> 
      */
     @Override
     public void onBindViewHolder(@NonNull MyMeetingViewHolder holder, int position) {
+        Meeting meeting = mMeetingList.get(position);
         holder.hourMeeting.setText(mMeetingList.get(position).getReservedHour());
         holder.subjectReu.setText(mMeetingList.get(position).getSubject());
         holder.meetingRoom.setText(mMeetingList.get(position).getRoomReseved());
         holder.meetingGuest.setText(mMeetingList.get(position).getGuests());
+        holder.imageMeeting.setImageResource(R.drawable.baseline_meeting_room_24);
+        holder.imageDeleteMeeting.setImageResource(R.drawable.baseline_delete_24);
+
+        holder.imageDeleteMeeting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            mMeetingList.remove(meeting);
+            }
+        }
+
+        );
     }
 
     /**

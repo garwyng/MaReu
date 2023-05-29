@@ -21,6 +21,7 @@ public class MyMeetingViewHolder extends RecyclerView.ViewHolder {
     public TextView subjectReu;
     public TextView meetingGuest;
     public ImageView imageMeeting;
+    public ImageView imageDeleteMeeting;
 
     public MyMeetingViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -29,5 +30,7 @@ public class MyMeetingViewHolder extends RecyclerView.ViewHolder {
         subjectReu = itemView.findViewById(com.openclassrooms.mareu.R.id.item_list_objet);
         meetingGuest= itemView.findViewById(com.openclassrooms.mareu.R.id.item_list_guest);
         imageMeeting = itemView.findViewById(com.openclassrooms.mareu.R.id.item_image_list_reu);
+        imageDeleteMeeting = itemView.findViewById(com.openclassrooms.mareu.R.id.item_list_delete_button);
+
     }
 }

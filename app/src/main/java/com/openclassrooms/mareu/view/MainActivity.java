@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-        List<Meeting> meetingsList = new MyMeetingApiService().getMeetings();
+        List<Meeting> meetingsList = new MyMeetingApiService().getMeetingsList();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyMeetingAdapter(getApplicationContext(),meetingsList));
