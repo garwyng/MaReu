@@ -22,7 +22,7 @@ public class MyMeetingApiService implements MyMeetingApiServiceInterface {
         return new ArrayList<Meeting>();
     }
     }
-    public ArrayList<Room> getRoom() {return (ArrayList<Room>) mRoomsList;
+    public ArrayList<Room> getRooms() {return (ArrayList<Room>) mRoomsList;
     }
 
     @Override
