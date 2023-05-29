@@ -1,5 +1,7 @@
 package com.openclassrooms.mareu.view;
 
+import static com.openclassrooms.mareu.controler.MyMeetingApiService.*;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.openclassrooms.mareu.R;
+import com.openclassrooms.mareu.controler.MyMeetingApiService;
+import com.openclassrooms.mareu.controler.MyMeetingApiServiceInterface;
 import com.openclassrooms.mareu.model.Meeting;
 
 import java.util.ArrayList;
 
-public class ReuAdapter extends RecyclerView.Adapter<ReuAdapter.ViewHolder> {
+public class MeetingRecyclerviewAdapter extends RecyclerView.Adapter<MeetingRecyclerviewAdapter.ViewHolder> {
 
-    private ArrayList<Meeting> mMeetings;
+    public ArrayList<Meeting> mMeetings = ;
 
-    public ReuAdapter(ArrayList<Meeting> meetings) {
+    public MeetingRecyclerviewAdapter(ArrayList<Meeting> meetings) {
         this.mMeetings = meetings;
     }
 
@@ -32,6 +36,7 @@ public class ReuAdapter extends RecyclerView.Adapter<ReuAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         holder.displayReu(mMeetings.get(position));
     }
 
@@ -60,9 +65,9 @@ public class ReuAdapter extends RecyclerView.Adapter<ReuAdapter.ViewHolder> {
         }
 
         public void displayReu(Meeting meeting) {
-            meetingRoom.setText(meeting.getSalle().getSalleName());
+            meetingRoom.setText(meeting.getRoomReseved());
             subjectReu.setText(meeting.getSubject());
-            meetingGuest.setText(meeting.getParticipants().toString());
+            meetingGuest.setText(meeting.getGuests());
 
         }
     }

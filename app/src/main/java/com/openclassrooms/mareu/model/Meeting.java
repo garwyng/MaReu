@@ -4,26 +4,36 @@ import java.util.Date;
 import java.util.List;
 
 public class Meeting {
-
+    int id;
     private String subject;
-    private List<CoWorker> participants;
+    private String guests;
     private Room room;
-    private Date creationDate;
-    private Date reservationDate;
+    private String roomReseved;
+    private String reservationDate;
+    private String reservedHour;
 
     /**
      *
      * @param subject
-     * @param participants
-     * @param room
+     * @param guests
+     * @param roomReseved
      */
-    public Meeting(String subject, List<CoWorker> participants, Room room, Date creationDate, Date reservationDate) {
+    public Meeting(int id,String subject, String guests, String roomReseved, String reservationDate,String reservedHour) {
         this.subject = subject;
-        this.participants = participants;
-        this.room = room;
-        this.creationDate = creationDate;
+        this.guests = guests;
+        this.roomReseved = roomReseved;
         this.reservationDate = reservationDate;
+        this.id = id;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getSubject() {
         return subject;
     }
@@ -32,35 +42,43 @@ public class Meeting {
         this.subject = subject;
     }
 
-    public List<CoWorker> getParticipants() {
-        return participants;
+    public String getGuests() {
+        return guests;
     }
 
-    public void setParticipants(List<CoWorker> participants) {
-        this.participants = participants;
+    public void setGuests(String guests) {
+        this.guests = guests;
     }
 
-    public Room getSalle() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setSalle(Room salle) {
-        this.room = salle;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public String getRoomReseved() {
+        return roomReseved;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setRoomReseved(String roomReseved) {
+        this.roomReseved = roomReseved;
     }
 
-    public Date getReservationDate() {
+    public String getReservationDate() {
         return reservationDate;
     }
 
-    public void setReservationDate(Date reservationDate) {
+    public void setReservationDate(String reservationDate) {
         this.reservationDate = reservationDate;
+    }
+
+    public String getReservedHour() {
+        return reservedHour;
+    }
+
+    public void setReservedHour(String reservedHour) {
+        this.reservedHour = reservedHour;
     }
 }
