@@ -11,5 +11,8 @@
     <string name="email">Email</string>
     <string name="select_room" >select meeting\'s room</string>
     <string name="select_hour_start">hour meeting start</string>
-    <string name="set_hour_stop">set the duration for the meeting</string>Select the meeting's room />
+    <string name="set_hour_stop">set the duration for the meeting</string>
+    <string name="delete_meeting">delete meeting</string>
+    <string name="meeting_list">meeting list</string>
+    <string name="image_meeting">image metting</string>Select the meeting's room />
 </resources>

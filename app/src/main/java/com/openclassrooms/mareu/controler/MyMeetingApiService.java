@@ -21,12 +21,7 @@ public class MyMeetingApiService implements MyMeetingApiServiceInterface {
     }
 
     @Override
-    public void createReu() {
-
-    }
-
-    @Override
-    public void deleteReu() {
-
+    public void deleteMeeting(Meeting meeting) {
+        mMeetingsList.remove(meeting);
     }
 }

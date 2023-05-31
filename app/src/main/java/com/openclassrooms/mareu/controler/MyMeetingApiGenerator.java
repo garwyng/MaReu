@@ -33,6 +33,8 @@ abstract class MyMeetingApiGenerator {
             new Meeting(8, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 8","05/06/23","15h00"),
             new Meeting(9, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 9","05/06/23","16h00"),
             new Meeting(10, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 10","05/06/23","15h00"));
+
+    public static void  deleteMeeting(Meeting meeting){ getMeetings().remove(meeting);}
 }
 
 

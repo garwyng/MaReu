@@ -1,7 +1,10 @@
 package com.openclassrooms.mareu.controler;
 
-public interface MyMeetingApiServiceInterface {
-    void createReu();
-    void deleteReu();
+import com.openclassrooms.mareu.model.Meeting;
 
+import java.util.List;
+
+public interface MyMeetingApiServiceInterface {
+    void deleteMeeting(Meeting meeting);
+    List<Meeting> getMeetingsList();
 }

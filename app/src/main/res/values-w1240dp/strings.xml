@@ -11,5 +11,8 @@
     <string name="Subject">objet de la réunion</string>
     <string name="email">email</string>
     <string name="select_room" >sel</string>
-    <string name="select_hour_start">hour meeting start</string>Sélection de la salle de réunion />
+    <string name="select_hour_start">hour meeting start</string>
+    <string name="delete_meeting">delete meeting</string>
+    <string name="meeting_list">meeting list</string>
+    <string name="image_meeting">image metting</string>Sélection de la salle de réunion />
 </resources>
