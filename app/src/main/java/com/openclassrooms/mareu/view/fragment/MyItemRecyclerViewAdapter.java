@@ -1,19 +1,22 @@
 package com.openclassrooms.mareu.view.fragment;
 
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.openclassrooms.mareu.R;
+import com.openclassrooms.mareu.controler.MyMeetingApiService;
 import com.openclassrooms.mareu.databinding.FragmentMyMeetingsBinding;
 import com.openclassrooms.mareu.model.Meeting;
 
-
 import java.util.List;
+
+
 
 /**
  * TODO: Replace the implementation with code for your data type.
@@ -26,8 +29,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         mMeetingList = items;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         return new ViewHolder(FragmentMyMeetingsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
@@ -42,6 +46,12 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.meetingGuest.setText(mMeetingList.get(position).getGuests());
         holder.imageMeeting.setImageResource(R.drawable.baseline_meeting_room_24);
         holder.imageDeleteMeeting.setImageResource(R.drawable.baseline_delete_24);
+
+        holder.imageDeleteMeeting.setOnClickListener(v -> {
+            Log.d("meetingToDelete", "onClick: "+ meeting);
+            MyMeetingApiService.newInstance().getMeetingsList().remove(meeting);
+
+        });
     }
 
     @Override
@@ -49,7 +59,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         return mMeetingList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
         public final TextView meetingRoom;

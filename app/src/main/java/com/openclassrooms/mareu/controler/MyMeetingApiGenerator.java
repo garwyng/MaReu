@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 abstract class MyMeetingApiGenerator {
-    static List<Room> getMeetingRooms(){
+    public static List<Room> getMeetingRooms(){
         return new ArrayList<>(MEETING_ROOMS);}
-    static List <Room> MEETING_ROOMS = Arrays.asList(
+    private static final List <Room> MEETING_ROOMS = Arrays.asList(
             new Room(1,"Réunion 1",true),
             new Room(2,"Réunion 2",true),
             new Room(3,"Réunion 3",true),
@@ -22,7 +22,7 @@ abstract class MyMeetingApiGenerator {
             new Room(9,"Réunion 9",true),
             new Room(10,"Réunion 10",true));
     public static List<Meeting> getMeetings(){return MEETINGS_LIST;}
-    static List<Meeting> MEETINGS_LIST = Arrays.asList(
+    public static List<Meeting> MEETINGS_LIST = Arrays.asList(
             new Meeting(1, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 1","24/04/23","14h00"),
             new Meeting(2, "budjet", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 2","02/05/23","9h00"),
             new Meeting(3, "campagne achat", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 3","02/06/23","15h00"),
@@ -34,7 +34,6 @@ abstract class MyMeetingApiGenerator {
             new Meeting(9, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 9","05/06/23","16h00"),
             new Meeting(10, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 10","05/06/23","15h00"));
 
-    public static void  deleteMeeting(Meeting meeting){ getMeetings().remove(meeting);}
 }
 
 

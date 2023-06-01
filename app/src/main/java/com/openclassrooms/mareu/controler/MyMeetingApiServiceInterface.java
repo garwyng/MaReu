@@ -7,4 +7,5 @@ import java.util.List;
 public interface MyMeetingApiServiceInterface {
     void deleteMeeting(Meeting meeting);
     List<Meeting> getMeetingsList();
+
 }
