@@ -21,7 +21,7 @@ abstract class MyMeetingApiGenerator {
             new Room(8,"Réunion 8",true),
             new Room(9,"Réunion 9",true),
             new Room(10,"Réunion 10",true));
-    public static List<Meeting> getMeetings(){return MEETINGS_LIST;}
+    public static List<Meeting> getMeetings(){return new ArrayList<Meeting>(MEETINGS_LIST);}
     public static List<Meeting> MEETINGS_LIST = Arrays.asList(
             new Meeting(1, "Point projet en cours", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 1","24/04/23","14h00"),
             new Meeting(2, "budjet", "antoine@lamazon.fr, bernadette@lamazon.fr, sophie@lamazon.fr","Réunion 2","02/05/23","9h00"),

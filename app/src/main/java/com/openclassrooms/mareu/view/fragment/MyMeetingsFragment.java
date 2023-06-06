@@ -7,13 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.openclassrooms.mareu.R;
 import com.openclassrooms.mareu.controler.MyMeetingApiService;
+import com.openclassrooms.mareu.di.DI;
+import com.openclassrooms.mareu.events.DeleteMeetingEvent;
 import com.openclassrooms.mareu.model.Meeting;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
@@ -24,57 +28,38 @@ import java.util.List;
  * A fragment representing a list of Items.
  */
 public class MyMeetingsFragment extends Fragment {
-
-    private final MyMeetingApiService service = MyMeetingApiService.newInstance();
-    private List<Meeting> meetingsList = service.getMeetingsList();
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
+    private RecyclerView mRecyclerView;
+    private final MyMeetingApiService service = DI.getNewInstanceMyMeetingApiService();
+    List<Meeting> meetingsList;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public MyMeetingsFragment() {
-    }
 
-    @SuppressWarnings("unused")
-    public static MyMeetingsFragment newInstance(int columnCount) {
+    public static MyMeetingsFragment newInstance() {
         MyMeetingsFragment fragment = new MyMeetingsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_meetings_list, container, false);
-
-        // Set the adapter
-        if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(meetingsList));
-        }
+            mRecyclerView = (RecyclerView) view;
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         return view;
     }
     private void initMeetingsList(){
-        meetingsList=service.getMeetingsList();
+        meetingsList = service.getMeetingsList();
+        mRecyclerView.setAdapter(new MyItemRecyclerViewAdapter(meetingsList));
     }
     @Override
     public void onResume(){
@@ -87,7 +72,7 @@ public class MyMeetingsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
+        EventBus.getDefault().register(this);
     }
     /**
      *
@@ -95,7 +80,12 @@ public class MyMeetingsFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe
+    public void onDeleteMeeting(DeleteMeetingEvent event){
+        service.deleteMeeting(event.meeting);
+        initMeetingsList();
     }
 
 }

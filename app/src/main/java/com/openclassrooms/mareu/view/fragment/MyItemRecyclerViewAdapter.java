@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.openclassrooms.mareu.R;
-import com.openclassrooms.mareu.controler.MyMeetingApiService;
 import com.openclassrooms.mareu.databinding.FragmentMyMeetingsBinding;
+import com.openclassrooms.mareu.events.DeleteMeetingEvent;
 import com.openclassrooms.mareu.model.Meeting;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
         holder.imageDeleteMeeting.setOnClickListener(v -> {
             Log.d("meetingToDelete", "onClick: "+ meeting);
-            MyMeetingApiService.newInstance().getMeetingsList().remove(meeting);
+            EventBus.getDefault().post(new DeleteMeetingEvent(meeting));
 
         });
     }
