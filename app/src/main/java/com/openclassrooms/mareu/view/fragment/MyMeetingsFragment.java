@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class MyMeetingsFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private final MyMeetingApiService service = DI.getNewInstanceMyMeetingApiService();
+    private final MyMeetingApiService service = DI.getMyMeetingApiService();
     List<Meeting> meetingsList;
 
     /**

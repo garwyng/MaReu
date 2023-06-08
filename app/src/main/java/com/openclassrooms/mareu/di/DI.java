@@ -7,7 +7,5 @@ public class DI {
     public static MyMeetingApiService getMyMeetingApiService(){
         return mMyMeetingApiService;
     }
-    public static MyMeetingApiService getNewInstanceMyMeetingApiService(){
-       return new MyMeetingApiService();
-    }
+
 }

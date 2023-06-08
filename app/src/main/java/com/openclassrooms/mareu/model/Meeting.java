@@ -1,7 +1,6 @@
 package com.openclassrooms.mareu.model;
 
 import java.util.Date;
-import java.util.List;
 
 public class Meeting {
     int id;
@@ -9,7 +8,7 @@ public class Meeting {
     private String guests;
     private Room room;
     private String roomReseved;
-    private String reservationDate;
+    private Date reservationDate;
     private String reservedHour;
 
     /**
@@ -18,7 +17,7 @@ public class Meeting {
      * @param guests
      * @param roomReseved
      */
-    public Meeting(int id,String subject, String guests, String roomReseved, String reservationDate,String reservedHour) {
+    public Meeting(int id, String subject, String guests, String roomReseved, Date reservationDate, String reservedHour) {
         this.subject = subject;
         this.guests = guests;
         this.roomReseved = roomReseved;
@@ -66,11 +65,11 @@ public class Meeting {
         this.roomReseved = roomReseved;
     }
 
-    public String getReservationDate() {
+    public Date getReservationDate() {
         return reservationDate;
     }
 
-    public void setReservationDate(String reservationDate) {
+    public void setReservationDate(Date reservationDate) {
         this.reservationDate = reservationDate;
     }
 

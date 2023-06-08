@@ -9,9 +9,12 @@
     <string name="set_hour_stop">renseigner l\'heure</string>
     <string name="Subject">objet de la réunion</string>
     <string name="email">email</string>
-    <string name="select_room" >selection de la salle de réunion</string>
+    <string name="select_room">selection de la salle de réunion</string>
     <string name="select_hour_start">hour meeting start</string>
     <string name="delete_meeting">delete meeting</string>
     <string name="meeting_list">meeting list</string>
-    <string name="image_meeting">image metting</string>Sélection de la salle de réunion />
+    <string name="image_meeting">image metting</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>Sélection de la salle de
+    réunion />
 </resources>
