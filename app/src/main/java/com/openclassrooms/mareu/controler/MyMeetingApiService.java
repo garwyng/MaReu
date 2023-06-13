@@ -35,12 +35,19 @@ public class MyMeetingApiService implements MyMeetingApiServiceInterface {
         Log.d("MEETINGSLIST", "deleteMeeting: "+ mMeetingsList);
     }
     public String getStringCurrentDate(){
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = getDate();
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
         String dateString = DateFormat.getDateInstance().format(cal.getTime());
         return dateString;
+    }
+    public Calendar getDate(){
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
+        return cal;
     }
     public List<Meeting> DateFilter(Date date) {
          List<Meeting> meetingOfTheDay = new ArrayList<Meeting>();

@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import java.util.Calendar;
 
 public class DatePickerFragement extends DialogFragment {
+
     /**
      * @param savedInstanceState The last saved instance state of the Fragment,
      *                           or null if this is a freshly created Fragment.
@@ -23,7 +24,9 @@ public class DatePickerFragement extends DialogFragment {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog mDatePickerDialog = new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getActivity(),year, month,day);
 
-        return new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getActivity(),year, month,day);
+        return mDatePickerDialog;
     }
+
 }
